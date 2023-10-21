@@ -26,10 +26,8 @@ class Record:
 
     @input_error
     def delete_phone(self, phone):
-        phone = str(Phone(phone))
-
         try:
-            self.phones.remove(phone)
+            self.phones.remove(str(Phone(phone)))
         except ValueError:
             raise PhoneNotFound
         # end try
@@ -41,7 +39,7 @@ class Record:
     def modify_phone(self, old_phone, new_phone):
         try:
             self.phones[self.phones.index(old_phone)] = str(Phone(new_phone))
-        except ValueError:
+        except KeyError:
             raise PhoneNotFound
         # end try
 
