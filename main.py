@@ -112,6 +112,9 @@ def run_bot():
             elif command in ["delete", "remove", "delete_phone", "remove_phone"]:
                 print(delete_entry(*data))
             elif command in ["edit", "change", "modify"]:
+                # # # # # # #
+                #   TODO    #
+                # # # # # # #
                 pass
             elif command in ["show", "find"]:
                 print(find_records(*data))
