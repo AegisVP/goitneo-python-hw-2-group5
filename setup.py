@@ -13,8 +13,8 @@ setup(name='goitneo-python-hw-2-group5',
       license='MIT',
       packages=find_namespace_packages(),
       classifiers=["Programming Language :: Python :: 3"],
-      install_requires=['faker'],
-      package_data={"":["*.json"]},
+      install_requires=[],
+      package_data={"": ["*.json"]},
       include_package_data=False,
       entry_points={'console_scripts': ['run_bot = main:run_bot']}
-)
+      )
