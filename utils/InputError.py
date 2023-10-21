@@ -15,22 +15,22 @@ def input_error(func):
             print(e)
             raise
         except NoDataEntered:
-            print("Not enough data entered")
+            print("Недостатнь данних введено")
             raise
         except NoPhoneEntered:
-            print("Enter a phone number")
+            print("Введіть номер телефона")
             raise
         except PhoneNotFound:
-            print("Phone number not found")
+            print("Номер телефона не знайдено")
             raise
         except IncorrectPhoneFormat:
-            print("Enter only 10 digits as phone number")
+            print("Введіть 10 цифр як номер телефона")
             raise
         except NoDataFound:
-            print("Nothing found")
+            print("Нічого не знайдень")
             raise
         except IncorrectDataType:
-            print("Wrong data type passed")
+            print("Некорректний тип данних")
             raise
         except DuplicateEntry as e:
             entry_msg = e if e.args.__len__ else 'Запис'

@@ -26,12 +26,7 @@ class AddressBook(UserDict):
 
     @input_error
     def find(self, needle):
-        for record in self.data.values():
-            if record.name == needle or needle in record.phones:
-                return record
-            # end if
-        # end for
-        return None
+        return self.data.get(needle, None)
     # end def
 
     @input_error

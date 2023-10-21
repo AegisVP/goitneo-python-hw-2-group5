@@ -21,7 +21,7 @@ def find_records(*data):
         # end if
     # end for
 
-    return print_data(found) if len(found) > 0 else "Nothing found"
+    return print_data(found) if len(found) > 0 else "Нічого не знайшов"
     # end for
 # end def
 
@@ -75,7 +75,7 @@ def print_data(data=[]):
     if len(book) > 0:
         return "\n".join([str(record) for record in data])
     # end if
-    return "Phonebook is empty"
+    return "Записна книжка пуста"
 # end def
 
 
@@ -93,7 +93,7 @@ def try_catch_wrapper(func):
 @try_catch_wrapper
 def run_bot():
     global book
-    print("Welcome! What can I do for you?")
+    print("Вітаю!?")
 
     while True:
         try:
@@ -106,7 +106,7 @@ def run_bot():
             command = command.casefold()
 
             if command in ["hello", "hi"]:
-                print("How can I help you?")
+                print("Чим можу допомогті?")
             elif command in ["add", "new", "add_phone", "new_phone"]:
                 print(add_entry(*data))
             elif command in ["delete", "remove", "delete_phone", "remove_phone"]:
@@ -123,10 +123,10 @@ def run_bot():
             elif command in ["help"]:
                 print(help_text)
             elif command in ['close', 'quit', 'exit', 'bye']:
-                print("Good bye!")
+                print("До побачення!")
                 break
             else:
-                print("Try asking something else or type 'help'")
+                print("Сформулюйте запит відповідно командам в 'help'")
             # end if
         except Exception:
             continue

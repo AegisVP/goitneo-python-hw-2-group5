@@ -11,7 +11,7 @@ class Record:
     # end def
 
     def __str__(self):
-        return f"Contact name: {self.name}, phones: {'; '.join(self.phones)}"
+        return f"Контакт: {self.name}, телефони: {'; '.join(self.phones)}"
     # end def
 
     @input_error
@@ -21,7 +21,7 @@ class Record:
         # end if
 
         self.phones.append(str(Phone(phone)))
-        return "Phone number added"
+        return "Номер телефона додано успішно"
     # end def
 
     @input_error
@@ -32,7 +32,7 @@ class Record:
             raise PhoneNotFound
         # end try
 
-        return "Phone number removed"
+        return "Номер телефона видалено успішно"
     # end def
 
     @input_error
@@ -43,7 +43,7 @@ class Record:
             raise PhoneNotFound
         # end try
 
-        return "Phone number changed"
+        return "Номер телефона змінено успішно"
     # end def
 
     @input_error
