@@ -33,10 +33,7 @@ def input_error(func):
             print("Некорректний тип данних")
             raise
         except DuplicateEntry as e:
-            entry_msg = e if e.args.__len__ else 'Запис'
-            print(f"{entry_msg} вже існує")
-            if entry_msg == "Контакт":
-                print("Use add_phone to add additional phone numbers")
+            print(f"{(e if e.args.__len__ else 'Запис')} вже існує")
             raise
 
         except Exception as e:

@@ -34,11 +34,16 @@ class AddressBook(UserDict):
     def add_record(self, record):
         if type(record) != Record:
             raise IncorrectDataType
+        # end if
 
-        if len(self.data) > 0 and record.name in self.data.keys():
-            record.phones.extend(self.data[record.name].phones)
-            record.phones = list(set(record.phones))
-            return self.modify_record(record)
+        if record.name in self.data.keys():
+            if len(record.phones) > 0:
+                record.phones.extend(self.data[record.name].phones)
+                record.phones = list(set(record.phones))
+                return self.modify_record(record)
+            else:
+                raise DuplicateEntry("Контакт")
+            # end if
         # end if
 
         self.data[record.name] = record

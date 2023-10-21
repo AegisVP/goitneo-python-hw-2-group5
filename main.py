@@ -1,12 +1,7 @@
 from variables import help_text
 from phonebook.Record import Record
 from phonebook.AddressBook import AddressBook
-from utils.InputError import input_error
-from exceptions.Exceptions import NoPhoneEntered, UserNotFound
-import sys
-import os
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.dirname(SCRIPT_DIR))
+from exceptions.Exceptions import UserNotFound
 
 
 book = AddressBook()
@@ -48,7 +43,7 @@ def add_entry(name, *phones):
 # end def
 
 
-def delete_entry(name, phone=None):
+def delete_entry(name, phone=None, *_):
     if phone == None:
         return book.delete_record(name)
     # end if
@@ -79,21 +74,9 @@ def print_data(data=[]):
 # end def
 
 
-def try_catch_wrapper(func):
-    def wrapper(*args, **kwargs):
-        try:
-            func(*args, **kwargs)
-        except Exception as e:
-            print(e)
-        # end try
-    # end def
-    return wrapper
-
-
-@try_catch_wrapper
 def run_bot():
     global book
-    print("Вітаю!?")
+    print("Вітаю!")
 
     while True:
         try:
@@ -107,9 +90,9 @@ def run_bot():
 
             if command in ["hello", "hi"]:
                 print("Чим можу допомогті?")
-            elif command in ["add", "new", "add_phone", "new_phone"]:
+            elif command in ["add", "new"]:
                 print(add_entry(*data))
-            elif command in ["delete", "remove", "delete_phone", "remove_phone"]:
+            elif command in ["delete", "remove", "rem", "del"]:
                 print(delete_entry(*data))
             elif command in ["edit", "change", "modify"]:
                 # # # # # # #
